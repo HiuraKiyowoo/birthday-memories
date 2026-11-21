@@ -1,30 +1,19 @@
-# Rencana — Birthday Memories
+# Rencana — Birthday Memories (revisi sesuai referensi)
 
-## Pendekatan implementasi
+## Pendekatan
 
-Bangun pengalaman web React + Vite + TypeScript, mobile-first. Aplikasi berupa satu rangkaian tujuh scene dalam pengalaman penuh-layar, bukan tujuh route terpisah: navigasi Next/Previous, swipe sentuh, drag mouse, tombol keyboard, indikator progres, transisi Framer Motion, dan pengaman agar swipe tidak memotong interaksi kontrol. Scene meliputi Opening, Birthday Greeting, Photo Memories, Memory Timeline, Special Letter, Birthday Cake, dan Final Surprise. Semua konten personal berada dalam satu berkas konfigurasi yang mudah diedit; karena nama, foto, tanggal, dan musik belum diberikan, isi awal menggunakan contoh netral/placeholder yang dapat diganti.
+Bangun pengalaman enam halaman penuh layar menggunakan React, Vite, TypeScript, Tailwind CSS, Framer Motion, Lucide React, dan CSS pixel-art ringan. Hilangkan seluruh bingkai/tampilan browser dari halaman. Gunakan jendela dialog kecil bergaya komputer retro hanya sebagai interaksi pembuka sesuai screenshot: ilustrasi kue, teks “Love, will you blow this?”, dan tombol Yes/No. Setelah pembuka, enam halaman mengikuti urutan kolase kiri-ke-kanan lalu turun baris: (1) ucapan “happy birthday, bubby!” dengan lanskap pixel pastel; (2) menu ikon; (3) pemutar musik/vinyl; (4) surat; (5) scrapbook/foto; (6) surprise ulang tahun/wish.
 
-Gunakan CSS/Tailwind untuk ilustrasi ringan (amplop, balon, kue, lilin, partikel, confetti, dan visualizer) agar tidak membebani smartphone. Framer Motion menangani transisi scene, staggered reveal, dan interaksi kartu. Galeri memakai foto placeholder yang mudah diganti, lazy loading, zoom dialog, dan caption. Timeline mendukung reveal saat discroll. Surat memiliki animasi mengetik dan kontrol untuk membuka teks lengkap. Musik tidak autoplay; pemutaran baru dimulai setelah interaksi dan memiliki tombol play/pause serta volume. Hormati `prefers-reduced-motion` dan sediakan navigasi alternatif selain swipe.
+Navigasi antarpages dilakukan dengan swipe vertikal, swipe turun untuk maju dan swipe naik untuk kembali; wheel mouse menjadi alternatif desktop. Tidak gunakan klik pada panah, tab halaman, atau tombol CTA untuk berpindah scene. Tombol untuk interaksi lokal tetap boleh digunakan, seperti pilihan Yes/No, memutar lagu, memperbesar foto, membuka surat, dan membuat wish. Pergerakan scene memakai transisi vertikal halus Framer Motion. Indikator kemajuan bersifat visual saja.
 
-Struktur utama: `src/config/birthday.ts` untuk personalisasi; `src/components/` untuk shell, navigasi, kontrol audio, dekorasi, dan komponen reusable; `src/scenes/` untuk tujuh scene; `src/hooks/` untuk gesture dan navigasi; `src/index.css` untuk tema dan animasi ringan; `public/` untuk route manifest dan aset. Proyek awal kosong, jadi scaffold Vite React TypeScript dan konfigurasi Tailwind akan dibuat setelah rencana disetujui. Tidak diperlukan backend atau database.
+Konten personal—nama penerima/pengirim, ucapan, surat, foto/caption, tanggal, lagu, dan tema—berada di `src/config/birthday.ts`. Tanpa informasi pribadi atau audio dari pengguna, gunakan teks contoh netral, caption contoh, foto contoh, dan keadaan musik tidak mengeluarkan audio sampai `musicSrc` diisi. Hormati `prefers-reduced-motion`, gunakan lazy-loading foto, serta pertahankan layout responsif mobile.
 
-## Desain
+Struktur proyek: `src/App.tsx` menyusun scene dan gesture; `src/config/birthday.ts` menyimpan copy dan data; `src/index.css` mengatur palet retro pastel, hutan pixel, dan jendela dialog; `src/components/` untuk elemen reusable; `public/manus-routes.json` untuk route tunggal `/`. Tak perlu backend atau database.
 
-Tiga arah visual yang dipertimbangkan: (1) *editorial scrapbook romantis* (<0.10), (2) *fairytale pastel sinematik* (<0.10), (3) *minimalis floral modern* (<0.10). Pilihan: editorial scrapbook romantis, karena paling cocok mengubah kenangan dan surat menjadi hadiah digital yang terasa personal.
+## Arah visual
 
-- **Gerakan desain:** scrapbook editorial kontemporer dengan nuansa surat cinta dan cetakan foto instan.
-- **Prinsip inti:** hangat dan personal; kaya detail tetapi tetap lapang; interaksi jelas; animasi lembut dan hemat performa.
-- **Filosofi warna:** dasar ivory hangat dan blush, dengan plum/berry sebagai aksen khas serta sentuhan champagne untuk momen perayaan.
-- **Paradigma layout:** setiap scene seperti lembar scrapbook dalam panggung penuh layar; elemen foto, pita, dan catatan ditempatkan asimetris, dengan kartu bertumpuk, bukan dashboard/grid generik.
-- **Motif khas:** tepi foto polaroid dengan pita kecil; bintang/partikel lembut; garis tulisan tangan pada surat dan timeline.
-- **Interaksi:** tombol besar dan mudah dijangkau; swipe terasa seperti membalik halaman; gestur tidak menggantikan tombol; klik foto membuka tampilan besar.
-- **Animasi:** pergantian scene memakai kombinasi fade/slide/scale yang halus; elemen dekoratif melayang perlahan; confetti hanya pada momen spesifik; durasi dan gerak dikurangi bila `prefers-reduced-motion` aktif.
-- **Tipografi:** serif elegan untuk headline dan surat, sans-serif bersih untuk navigasi/isi, aksen script hanya untuk catatan pendek.
-- **Esensi brand:** hadiah digital yang mengubah ucapan ulang tahun menjadi perjalanan kenangan interaktif; personal, lembut, meriah.
-- **Suara brand:** intim, tulus, dan tidak berlebihan. Contoh: “Ada satu hari yang layak dirayakan lebih lama.” dan “Simpan harapanmu, lalu tiup lilinnya.”
-- **Wordmark:** “Birthday Memories” dengan serif editorial dan bintang kecil sebagai tanda baca visual.
-- **Warna brand khas:** berry-rose, digunakan hemat agar terasa istimewa.
+Gaya yang dipilih adalah interactive birthday card retro/pixel-art berdasarkan referensi pengguna: pastel sky/pink/mint, tipografi pixel pada label pendek dan sans yang ramah untuk teks utama, dialog sistem lawas untuk pembuka, landscape dan kartu bergaya pixel, tanpa UI browser. Interaksi harus mudah dipahami dan tidak memaksa navigasi klik: swipe vertikal menjadi bahasa utama untuk membalik halaman. Pesan memakai nada hangat dan playful, misalnya “Love, will you blow this?” serta “happy birthday, bubby!”. Brand essence: hadiah digital ulang tahun yang terasa seperti game/komputer kecil nostalgia; playful, lembut, personal.
 
-## Alur preview dan Vercel
+## Preview dan publikasi
 
-Setelah persetujuan, implementasikan keseluruhan tujuh scene, aktifkan server preview platform dan tampilkan hasilnya untuk ditinjau. Belum ada deploy atau publish dalam langkah ini. Setelah preview disetujui, deployment Vercel dapat dibahas/dikerjakan sebagai tahap terpisah sesuai akses dan konfigurasi yang tersedia; jangan memublikasikan tanpa instruksi eksplisit.
+Jalankan preview platform terlebih dahulu. Jangan menerbitkan ke Vercel atau platform lain tanpa instruksi publikasi eksplisit. Konfigurasi build statis proyek tersedia untuk checkpoint mendatang; auto-publish tetap nonaktif.
