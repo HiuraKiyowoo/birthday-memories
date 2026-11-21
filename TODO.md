@@ -8,8 +8,8 @@
 
 ## 2. Gaya visual retro dan halaman ucapan
 - Gunakan estetika pixel-art, warna pastel sky/pink/mint, tipografi retro untuk label, dan halaman penuh layar responsif.
-- Sebelum halaman cerita, tampilkan dialog retro kecil bergambar kue dengan teks “Love, will you blow this?” serta pilihan Yes/No.
-- Halaman ucapan menampilkan “happy birthday, bubby!” di atas lanskap pixel-art pastel.
+- Sebelum enam halaman cerita, tampilkan dialog retro kecil bergambar kue dengan teks “Love, will you blow this?” serta pilihan Yes/No pada layar pembuka tersendiri. Dialog tidak boleh menumpuk atau menutupi halaman ucapan; setelah Yes, No, atau tombol tutup, halaman pertama harus tampil utuh.
+- Halaman ucapan menampilkan “happy birthday, bubby!” di atas lanskap pixel-art pastel yang rinci dan tajam: awan/matahari bertingkat, pepohonan latar dan depan, detail bunga/rumput, serta kontur tanah kotak.
 - Semua tombol mudah disentuh, layout responsif, tanpa horizontal overflow, animasi ringan, dan menghormati `prefers-reduced-motion`.
 
 ## 3. Menu dan musik
