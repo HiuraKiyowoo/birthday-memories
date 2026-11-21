@@ -1,0 +1,20 @@
+export const birthday = {
+  recipient: 'Someone Wonderful',
+  sender: 'With all my love',
+  birthdayDate: 'Your special day',
+  greeting: 'May this next trip around the sun bring you all the little things that make your heart feel at home.',
+  letter: 'I hope you always remember how much light you bring into the lives around you. Thank you for every laugh, every late-night conversation, and every ordinary day you made feel special. Today, I hope the world gives a little of that magic back to you. Keep dreaming boldly, stay exactly as lovely as you are, and know that you are celebrated more than words can say.',
+  closing: 'Here’s to your next beautiful chapter.',
+  photos: [
+    { src: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85', caption: 'Golden hour, our favorite kind of magic.', date: 'A little while ago', rotate: '-4deg' },
+    { src: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=85', caption: 'The kind of laughter we never want to forget.', date: 'One perfect afternoon', rotate: '3deg' },
+    { src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=85', caption: 'You, being wonderfully and completely you.', date: 'Always a favorite', rotate: '-2deg' },
+  ],
+  timeline: [
+    { date: 'The beginning', title: 'A little hello', body: 'Some of the best stories start with the simplest moments.', icon: '✦' },
+    { date: 'The days in between', title: 'Our kind of ordinary', body: 'Coffee, long talks, happy accidents—and a hundred little reasons to smile.', icon: '♡' },
+    { date: 'Today', title: 'A whole new chapter', body: 'More adventures, more wishes, and so many memories still waiting for us.', icon: '✧' },
+  ],
+  musicSrc: '',
+  theme: { rose: '#bd6c7d', berry: '#683e57', blush: '#f2d9d6', ivory: '#fff8f2', gold: '#d6ad70' },
+};
