@@ -9,6 +9,7 @@ export const birthday = {
     { src: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85', caption: 'Golden hour, our favorite kind of magic.', date: 'A little while ago', rotate: '-4deg' },
     { src: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=85', caption: 'The kind of laughter we never want to forget.', date: 'One perfect afternoon', rotate: '3deg' },
     { src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=85', caption: 'You, being wonderfully and completely you.', date: 'Always a favorite', rotate: '-2deg' },
+    { src: '/manus-storage/friends-celebrating_59fdc210.jpg', caption: 'Joy, laughter, and a little confetti.', date: 'A night to remember', rotate: '4deg' },
   ],
   timeline: [
     { date: 'The beginning', title: 'A little hello', body: 'Some of the best stories start with the simplest moments.', icon: '✦' },

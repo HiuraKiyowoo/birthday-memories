@@ -2,7 +2,7 @@
 
 ## 1. Enam halaman cerita dan navigasi swipe
 - Buat enam halaman mengikuti urutan kolase: kiri-ke-kanan, lalu lanjut ke baris bawah. Urutannya adalah ucapan pixel-art, menu ikon, pemutar musik/vinyl, surat, scrapbook foto, dan birthday surprise.
-- Tampilkan transisi scene vertikal yang halus. Swipe ke bawah membuka halaman berikutnya, swipe ke atas kembali ke halaman sebelumnya; wheel mouse mendukung navigasi desktop.
+- Tampilkan transisi scene vertikal yang halus dan animasikan aset utama secara lembut: lanskap bergerak pelan, kartu/ikon/foto masuk bertahap, serta elemen surprise mengambang ringan. Swipe ke bawah membuka halaman berikutnya, swipe ke atas kembali ke halaman sebelumnya; wheel mouse mendukung navigasi desktop.
 - Hilangkan bingkai/jendela browser dan kontrol panah atau tab klik untuk berpindah halaman. Indikator progres hanya visual.
 - Interaksi dalam halaman tetap berfungsi dan tidak memicu navigasi swipe yang tak disengaja.
 
@@ -18,7 +18,7 @@
 
 ## 4. Surat, galeri, dan surprise
 - Halaman surat menampilkan desain surat retro dan kontrol untuk membuka isi surat lengkap.
-- Halaman scrapbook menampilkan foto dengan caption, lazy loading, dan kontrol foto yang membuka tampilan besar.
+- Halaman scrapbook menampilkan maksimal empat foto dengan caption dalam grid kompak 2×2; tiap kartu foto berbentuk persegi (rasio 1:1), responsif, menggunakan lazy loading, dan bisa diketuk untuk membuka tampilan besar. Jika hanya ada tiga foto, kartu ketiga ditengahkan.
 - Halaman terakhir menampilkan surprise/wish interaktif, pesan ulang tahun, dan opsi replay.
 
 ## 5. Konten yang bisa dikustomisasi dan preview
