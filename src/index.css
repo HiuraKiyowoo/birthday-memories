@@ -51,16 +51,16 @@ button{font:inherit;color:inherit;cursor:pointer}
 .menu-icon span{font:7px 'Press Start 2P',monospace}.icon-0{color:#a13139}.icon-1{color:#35444a}.icon-2{color:#754c72}.icon-3{color:#538b99}
 .menu-hint{position:absolute;bottom:17%;left:50%;transform:translateX(-50%);font:24px 'VT323',monospace;color:#594d53;white-space:nowrap}
 .music-page{display:grid;place-items:center;background:linear-gradient(145deg,#c8e8e6,#f4dfdf)}
-.music-card,.letter-window,.surprise-card{position:relative;width:min(600px,88vw);border:4px solid #47302c;background:#f7ecd7;box-shadow:5px 6px 0 #c99ea6}
+.music-card,.letter-window,.surprise-card{position:relative;width:min(600px,88vw);border:4px solid #47302c;background:#f7ecd7;box-shadow:5px 6px 0 #c99ea6,0 16px 36px #50373824}
 .music-window-title,.letter-toolbar,.surprise-title{height:29px;padding:6px 10px;display:flex;justify-content:space-between;background:#482d2c;color:#fff1db;font:8px 'Press Start 2P',monospace}
 .record-side{display:flex;align-items:center;justify-content:space-between;padding:21px 23px 14px;gap:12px}.track-info{display:flex;align-items:center;gap:12px;min-width:0}
 .mini-cover{width:76px;height:78px;display:grid;place-items:center;background:#8b2428;color:#fff;font:31px 'Press Start 2P';border:4px solid #5a302a}
 .track-info b,.track-info small{display:block}.track-info b{font:16px 'VT323',monospace;color:#632f30}.track-info small{font:13px 'VT323',monospace;color:#8c7370}
-.equalizer{height:13px;display:flex;align-items:end;gap:2px;margin-top:8px}.equalizer i{height:5px;width:3px;background:#bc6c77}.equalizer i:nth-child(3n){height:12px}.equalizer i:nth-child(2n){height:8px}
+.equalizer{height:13px;display:flex;align-items:end;gap:2px;margin-top:8px}.equalizer i{height:5px;width:3px;background:#bc6c77;transform-origin:bottom;animation:eq-dance .62s ease-in-out infinite alternate}.equalizer i:nth-child(3n){height:12px;animation-delay:-.3s}.equalizer i:nth-child(2n){height:8px;animation-delay:-.15s}
 .vinyl{width:clamp(92px,22vw,132px);height:clamp(92px,22vw,132px);flex:0 0 auto;border:0;border-radius:50%;background:repeating-radial-gradient(circle,#242428 0 3px,#37363a 4px 6px,#1f2023 7px 8px);position:relative;box-shadow:3px 4px 0 #8b8274;touch-action:manipulation}
-.vinyl span{position:absolute;left:calc(50% - 16px);top:calc(50% - 16px);width:32px;height:32px;background:#d7353b;border:5px solid #73272c;border-radius:50%}.spinning{animation:spin 3s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
-.player-controls,.volume-row{display:flex;align-items:center;gap:10px;padding:5px 20px}.player-controls button{width:31px;height:31px;border:2px solid #53332d;background:#f6f1e6;display:grid;place-items:center;touch-action:manipulation}
-.track-progress{height:7px;background:#d9cbc0;flex:1;border:1px solid #a99888}.track-progress span{display:block;width:28%;height:100%;background:#8f252a}.time-label,.volume-row span{font:12px 'VT323',monospace}.volume-row{padding:8px 22px 13px}.volume-row input{flex:1;accent-color:#8f252a;touch-action:manipulation}.audio-note{display:block;text-align:center;padding:0 10px 12px;color:#8b7772;font:12px 'VT323',monospace}
+.vinyl span{position:absolute;left:calc(50% - 16px);top:calc(50% - 16px);width:32px;height:32px;background:#d7353b;border:5px solid #73272c;border-radius:50%}.spinning{animation:spin 18s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.spotify-embed-shell{margin:0 16px 8px;padding:4px;border:1px solid #e1c7b4;background:#fff9ef;box-shadow:0 6px 16px #523a301c;border-radius:10px;overflow:hidden}.spotify-embed-shell iframe{display:block;width:100%;height:352px;border:0;border-radius:7px;background:#181818}
+.spotify-open{display:inline-flex;align-items:center;gap:6px;margin:0 0 14px 16px;padding:8px 10px;border:1px solid #285b3c;background:#246b43;color:#fff8ec;box-shadow:2px 3px 0 #17452e;font:7px 'Press Start 2P',monospace;text-decoration:none;transition:translate .2s ease,box-shadow .2s ease}.spotify-open:hover{translate:0 -2px;box-shadow:2px 5px 0 #17452e}
 .letter-page{display:grid;place-items:center;padding:22px 14px 64px;background:linear-gradient(145deg,#f2dfe6,#faf1dd)}
 .letter-window{width:min(640px,92vw);background:#fff8e8}.letter-paper{position:relative;min-height:270px;padding:22px 27px;background:#fff8e9;border:7px solid #f1e1ca;color:#685849}
 .letter-stamp{position:absolute;right:20px;top:17px;border:1px solid #c98294;color:#ba7286;padding:5px;font:8px 'Press Start 2P',monospace;transform:rotate(8deg)}.letter-dear{font:22px 'VT323',monospace}.letter-copy{max-width:78%;font:16px/1.55 'VT323',monospace}
@@ -86,13 +86,14 @@ button{font:inherit;color:inherit;cursor:pointer}
   .greeting-signs{top:44%;width:84vw}.paper-sign{font-size:clamp(34px,10.8vw,56px);padding:8px 15px 10px}
   .tree-one{left:0;width:48px;height:100px}.tree-two{left:14%;width:55px;height:132px}.tree-three{left:29%;width:48px;height:108px}.tree-four{right:13%;width:57px;height:142px}.tree-five{right:0;width:47px;height:103px}
   .menu-icons{gap:10px}.menu-icon{width:58px;height:64px;gap:6px}.menu-icon span{font-size:5px}.menu-hint{bottom:15%;font-size:21px}
-  .music-card{width:92vw}.record-side{padding:15px 12px 10px}.vinyl{width:92px;height:92px}.track-info{gap:8px}.mini-cover{width:57px;height:59px}.track-info b{font-size:13px}
+  .music-card{width:92vw}.record-side{padding:15px 12px 10px}.vinyl{width:92px;height:92px}.track-info{gap:8px}.mini-cover{width:57px;height:59px}.track-info b{font-size:13px}.spotify-embed-shell{margin:0 10px 8px}.spotify-open{margin-left:10px}
   .letter-page{padding:22px 14px 68px}.letter-paper{min-height:245px;padding:17px 14px}.letter-copy{font-size:14px}.letter-bouquet{right:7px;font-size:26px}
   .gallery-page{padding:24px 12px 68px}.gallery-grid{--gallery-gap:8px;gap:8px}.gallery-photo span{font-size:10px}
   .surprise-content{padding:12px;gap:7px}.wish-list p{font-size:12px}.swipe-hint{font-size:7px;bottom:max(20px,env(safe-area-inset-bottom))}.page-progress{right:8px;gap:7px}
 }
 @media(max-width:360px){.paper-sign{font-size:clamp(32px,10vw,38px);padding:7px 11px 9px}.greeting-signs{width:88vw}.menu-icons{gap:8px}.menu-icon{width:53px;height:59px}.menu-icon span{font-size:5px}.dialog-content{gap:11px}.dialog-content p{font-size:18px}.pixel-cake-art{width:51px;height:51px;flex-basis:51px}.intro-dialog{width:min(320px,92vw)}.gallery-title small{font-size:6px}.gallery-photo span{font-size:9px}}
 @media(max-height:620px) and (orientation:landscape){.greeting-signs{top:43%;transform:translate(-50%,-50%) scale(.72)}.pixel-tree{transform:scale(.72);transform-origin:bottom center}.swipe-hint{bottom:8px;padding:6px 9px;font-size:7px}.menu-icons{transform:scale(.82)}.menu-hint{bottom:12%}.music-card,.letter-window,.surprise-card{transform:scale(.85)}.gallery-page{padding-top:12px;padding-bottom:46px}.gallery-grid{width:min(54vh,90vw);max-height:calc(100% - 84px);--gallery-gap:6px;gap:6px}}
+@media(max-height:700px){.spotify-embed-shell iframe{height:260px}}
 @keyframes cloud-drift{to{translate:12px 0}}
 @keyframes sun-glimmer{to{opacity:.78;scale:.96}}
 @keyframes pixel-bob{50%{translate:0 -2px}}
@@ -100,11 +101,16 @@ button{font:inherit;color:inherit;cursor:pointer}
 @keyframes icon-arrive{0%{opacity:0;translate:0 14px;scale:.9}100%{opacity:1;translate:0 0;scale:1}}
 @keyframes card-arrive{0%{opacity:0;translate:0 16px;scale:.98}100%{opacity:1;translate:0 0;scale:1}}
 @keyframes photo-arrive{0%{opacity:0;translate:0 12px;scale:.94}100%{opacity:1;translate:0 0;scale:1}}
+@keyframes icon-float{50%{transform:translateY(-4px) rotate(1deg)}}
+@keyframes card-float{50%{transform:translateY(-4px)}}
+@keyframes eq-dance{from{transform:scaleY(.38);opacity:.7}to{transform:scaleY(1);opacity:1}}
+@keyframes photo-shine{to{transform:translateX(140%)}}
+@keyframes confetti-float{50%{transform:translateY(-7px) rotate(14deg);opacity:.65}}
 .pixel-cloud{animation:cloud-drift 16s ease-in-out infinite alternate}.cloud-right{animation-duration:20s;animation-direction:alternate-reverse}.cloud-small{animation-duration:12s}
 .pixel-sun{animation:sun-glimmer 2.6s ease-in-out infinite alternate}.pixel-tree{animation:pixel-bob 3.6s steps(2,end) infinite}.tree-two,.distant-two{animation-delay:-1.2s}.tree-three{animation-delay:-2.1s}.tree-four{animation-delay:-.7s}.tree-five{animation-delay:-1.6s}
 .greeting-signs .paper-sign{opacity:0;animation:sign-arrive .58s cubic-bezier(.22,1,.36,1) both}.sign-birthday{animation-delay:.1s}.sign-name{animation-delay:.2s}
-.menu-icon{animation:icon-arrive .55s cubic-bezier(.22,1,.36,1) both}.menu-icon:nth-child(2){animation-delay:.08s}.menu-icon:nth-child(3){animation-delay:.16s}.menu-icon:nth-child(4){animation-delay:.24s}
-.music-card,.letter-window,.gallery-title,.surprise-card{animation:card-arrive .6s cubic-bezier(.22,1,.36,1) both}
-.gallery-photo{animation:photo-arrive .55s cubic-bezier(.22,1,.36,1) both}.gallery-photo:nth-child(2){animation-delay:.07s}.gallery-photo:nth-child(3){animation-delay:.14s}.gallery-photo:nth-child(4){animation-delay:.21s}
-.pixel-flower,.letter-bouquet,.party-cake{animation:pixel-bob 2.8s steps(2,end) infinite alternate}.confetti-dot{animation:pixel-bob 1.8s steps(2,end) infinite alternate}.dot-b{animation-delay:-.8s}.dot-c{animation-delay:-1.3s}.pixel-person{animation:pixel-bob 2.4s steps(2,end) infinite alternate}
+.menu-icon{animation:icon-arrive .55s cubic-bezier(.22,1,.36,1) both,icon-float 3.8s ease-in-out infinite}.menu-icon:nth-child(2){animation-delay:.08s,-.9s}.menu-icon:nth-child(3){animation-delay:.16s,-1.8s}.menu-icon:nth-child(4){animation-delay:.24s,-2.7s}
+.music-card,.letter-window,.surprise-card{animation:card-arrive .6s cubic-bezier(.22,1,.36,1) both,card-float 5.8s ease-in-out .6s infinite}.gallery-title{animation:card-arrive .6s cubic-bezier(.22,1,.36,1) both}
+.gallery-photo{animation:photo-arrive .55s cubic-bezier(.22,1,.36,1) both;transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s ease,border-color .28s ease}.gallery-photo:nth-child(2){animation-delay:.07s}.gallery-photo:nth-child(3){animation-delay:.14s}.gallery-photo:nth-child(4){animation-delay:.21s}.gallery-photo img{transition:transform .45s cubic-bezier(.22,1,.36,1),filter .45s ease}.gallery-photo:hover{transform:translateY(-4px) rotate(-1deg);border-color:#fff;box-shadow:4px 8px 0 #55818a}.gallery-photo:hover img{transform:scale(1.06);filter:saturate(1.05)}.gallery-photo:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 36%,#ffffff90 49%,transparent 62%);transform:translateX(-140%);opacity:.55}.gallery-photo:hover:after{animation:photo-shine .72s ease}
+.pixel-flower,.letter-bouquet,.party-cake{animation:pixel-bob 2.8s steps(2,end) infinite alternate}.confetti-dot{animation:confetti-float 2s ease-in-out infinite alternate}.dot-b{animation-delay:-.8s}.dot-c{animation-delay:-1.3s}.pixel-person{animation:pixel-bob 2.4s steps(2,end) infinite alternate}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

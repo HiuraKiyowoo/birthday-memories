@@ -17,5 +17,7 @@ export const birthday = {
     { date: 'Today', title: 'A whole new chapter', body: 'More adventures, more wishes, and so many memories still waiting for us.', icon: '✧' },
   ],
   musicSrc: '',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/6b4vOjVdGV7N1yDU9fnXn1?utm_source=generator&theme=0',
+  spotifyPlaylistUrl: 'https://open.spotify.com/playlist/6b4vOjVdGV7N1yDU9fnXn1',
   theme: { rose: '#bd6c7d', berry: '#683e57', blush: '#f2d9d6', ivory: '#fff8f2', gold: '#d6ad70' },
 };
