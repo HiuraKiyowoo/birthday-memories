@@ -8,7 +8,7 @@ Navigasi antarpages dilakukan dengan swipe vertikal, swipe turun untuk maju dan 
 
 Konten personal—nama penerima/pengirim, ucapan, surat, foto/caption, tanggal, gambar background, dan metadata Spotify—berada di `src/config/birthday.ts`. Gunakan gambar background yang diberikan pengguna sebagai latar seluruh scene dengan overlay seperlunya agar teks tetap terbaca. Halaman Musik menggunakan format single track dengan judul “My Wish”, artist “Rascal Flatts”, dan poster yang diberikan pengguna. Sampai URL track Spotify dikirim, tampilkan status bahwa link menyusul; setelah URL tersedia, gunakan embed track Spotify resmi, tanpa autoplay. Galeri menampilkan maksimal empat foto dalam grid kompak 2×2 dengan tiap kartu berasio 1:1; jika hanya tiga foto tersedia, kartu terakhir ditengahkan. Tanpa informasi pribadi, gunakan teks contoh netral, caption contoh, dan foto contoh. Hormati `prefers-reduced-motion`, gunakan lazy-loading foto, serta pertahankan layout responsif mobile.
 
-Struktur proyek: `src/App.tsx` menyusun scene dan gesture; `src/config/birthday.ts` menyimpan copy dan data; `src/index.css` mengatur palet retro pastel, hutan pixel, dan jendela dialog; `src/components/` untuk elemen reusable; `public/manus-routes.json` untuk route tunggal `/`. Tak perlu backend atau database.
+Struktur proyek: `src/App.tsx` menyusun scene dan gesture; `src/config/birthday.ts` menyimpan copy dan data; `src/index.css` mengatur palet retro pastel, hutan pixel, dan jendela dialog; `src/components/` untuk elemen reusable; `public/manus-routes.json` untuk route tunggal `/`; `public/assets/` menyimpan aset lokal agar site tetap mandiri di hosting luar. Tak perlu backend atau database.
 
 ## Arah visual
 
@@ -16,4 +16,4 @@ Gaya yang dipilih adalah interactive birthday card retro/pixel-art berdasarkan r
 
 ## Preview dan publikasi
 
-Jalankan preview platform terlebih dahulu. Jangan menerbitkan ke Vercel atau platform lain tanpa instruksi publikasi eksplisit. Konfigurasi build statis proyek tersedia untuk checkpoint mendatang; auto-publish tetap nonaktif.
+Permintaan lanjutan ini secara eksplisit meminta repo GitHub baru dan deployment Vercel. Buat repo private melalui konfirmasi pemilik, sertakan seluruh aset storage yang digunakan di `public/assets/`, lalu deploy sebagai situs statis setelah konektor Vercel diotorisasi. Auto-publish Manus tetap nonaktif dan tidak dipakai untuk deployment ini.

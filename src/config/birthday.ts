@@ -1,5 +1,5 @@
 export const birthday = {
-  backgroundImage: '/manus-storage/bday-background_fb051d8c.jpg',
+  backgroundImage: '/assets/birthday-background.jpg',
   recipient: 'Someone Wonderful',
   sender: 'With all my love',
   birthdayDate: 'Your special day',
@@ -10,7 +10,7 @@ export const birthday = {
     { src: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85', caption: 'Golden hour, our favorite kind of magic.', date: 'A little while ago', rotate: '-4deg' },
     { src: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=85', caption: 'The kind of laughter we never want to forget.', date: 'One perfect afternoon', rotate: '3deg' },
     { src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=85', caption: 'You, being wonderfully and completely you.', date: 'Always a favorite', rotate: '-2deg' },
-    { src: '/manus-storage/friends-celebrating_59fdc210.jpg', caption: 'Joy, laughter, and a little confetti.', date: 'A night to remember', rotate: '4deg' },
+    { src: '/assets/friends-celebrating.jpg', caption: 'Joy, laughter, and a little confetti.', date: 'A night to remember', rotate: '4deg' },
   ],
   timeline: [
     { date: 'The beginning', title: 'A little hello', body: 'Some of the best stories start with the simplest moments.', icon: '✦' },
@@ -20,7 +20,7 @@ export const birthday = {
   musicSrc: '',
   songTitle: 'My Wish',
   songArtist: 'Rascal Flatts',
-  songArtwork: '/manus-storage/my-wish-poster_af0a0de4.jpg',
+  songArtwork: '/assets/my-wish-poster.jpg',
   spotifyTrackUrl: '',
   theme: { rose: '#bd6c7d', berry: '#683e57', blush: '#f2d9d6', ivory: '#fff8f2', gold: '#d6ad70' },
 };

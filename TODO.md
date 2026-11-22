@@ -26,3 +26,8 @@
 - Simpan nama penerima/pengirim, pesan ucapan, isi surat, foto dan caption, tanggal, lagu, serta warna tema dalam `src/config/birthday.ts` agar dapat diedit tanpa mengubah komponen.
 - Saat detail personal belum diberikan, gunakan contoh netral yang mudah diganti.
 - Bangun preview terlebih dahulu; jangan menerbitkan ke Vercel/platform tanpa instruksi publikasi eksplisit.
+
+## 6. Repository GitHub dan deployment Vercel
+- Buat repository GitHub baru yang private melalui alur konfirmasi pemilik, simpan project pada branch `main`, dan pastikan commit terbaru memuat semua perubahan yang diminta.
+- Sertakan aset background, poster lagu, dan foto galeri yang sebelumnya berada di `/manus-storage/` ke dalam `public/assets/`; aplikasi harus memakai path lokal yang dapat dilayani oleh Vercel.
+- Hubungkan repository ke akun Vercel pengguna setelah konektor diotorisasi, jalankan build statis proyek, dan kirim deployment production setelah selesai; berikan URL hanya bila hasil deployment berhasil dikonfirmasi.
