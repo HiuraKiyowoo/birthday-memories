@@ -1,4 +1,5 @@
 export const birthday = {
+  backgroundImage: '/manus-storage/bday-background_fb051d8c.jpg',
   recipient: 'Someone Wonderful',
   sender: 'With all my love',
   birthdayDate: 'Your special day',
@@ -17,7 +18,9 @@ export const birthday = {
     { date: 'Today', title: 'A whole new chapter', body: 'More adventures, more wishes, and so many memories still waiting for us.', icon: '✧' },
   ],
   musicSrc: '',
-  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/6b4vOjVdGV7N1yDU9fnXn1?utm_source=generator&theme=0',
-  spotifyPlaylistUrl: 'https://open.spotify.com/playlist/6b4vOjVdGV7N1yDU9fnXn1',
+  songTitle: 'My Wish',
+  songArtist: 'Rascal Flatts',
+  songArtwork: '/manus-storage/my-wish-poster_af0a0de4.jpg',
+  spotifyTrackUrl: '',
   theme: { rose: '#bd6c7d', berry: '#683e57', blush: '#f2d9d6', ivory: '#fff8f2', gold: '#d6ad70' },
 };
