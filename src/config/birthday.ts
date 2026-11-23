@@ -10,7 +10,6 @@ export const birthday = {
     { src: '/assets/nopayy-memory-1.jpg', caption: 'A favorite little memory.', date: 'Always remembered', rotate: '-4deg' },
     { src: '/assets/nopayy-memory-2.jpg', caption: 'One of our happy moments.', date: 'A day to keep', rotate: '3deg' },
     { src: '/assets/nopayy-memory-3.jpg', caption: 'Something worth remembering.', date: 'A little while ago', rotate: '-2deg' },
-    { src: '/assets/friends-celebrating.jpg', caption: 'Joy, laughter, and a little confetti.', date: 'A night to remember', rotate: '4deg' },
     { src: '/assets/nopayy-memory-4.jpg', caption: 'A lovely little memory.', date: 'A favorite moment', rotate: '-3deg' },
   ],
   timeline: [
