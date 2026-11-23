@@ -21,6 +21,7 @@ export const birthday = {
   songTitle: 'My Wish',
   songArtist: 'Rascal Flatts',
   songArtwork: '/assets/my-wish-poster.jpg',
+  finalArtwork: '/assets/nopayy-birthday-sticker-final.png',
   spotifyTrackUrl: '',
   theme: { rose: '#bd6c7d', berry: '#683e57', blush: '#f2d9d6', ivory: '#fff8f2', gold: '#d6ad70' },
 };
