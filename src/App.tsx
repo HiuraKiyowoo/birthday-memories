@@ -63,7 +63,7 @@ export default function App() {
     const count = page === 5 ? 4 : 2;
     return Array.from({ length: count }, (_, i) => ({
       index: i,
-      left: Math.min(88, Math.max(5, (i + .5) * (100 / count) + (Math.random() - .5) * (count === 4 ? 13 : 17))),
+      left: Math.min(88, Math.max(5, (i + .5) * (100 / count) + (Math.random() - .5) * (count === 4 ? 7.5 : 17))),
       cord: 8 + Math.random() * 8,
       duration: 2.8 + Math.random() * 1.8,
       delay: i * .11 + Math.random() * .14,
