@@ -18,6 +18,6 @@ export const birthday = {
     { date: 'Today', title: 'A whole new chapter', body: 'More adventures, more wishes, and so many memories still waiting for us.', icon: '✧' },
   ],
   finalArtwork: '/assets/nopayy-final-overlay.png',
-  spotifyPlaylistUrl: 'https://open.spotify.com/playlist/6b4vOjVdGV7N1yDU9fnXn1?si=l37jEnuTSvGKac1KKGhYsQ&utm_source=copy-link',
+  spotifyPlaylistUrl: 'https://open.spotify.com/playlist/38mAL8m9EMRbA4HQgxuPXB?si=SowtaBbwT_qIpbQVFPjtmA&utm_source=copy-link',
   theme: { rose: '#bd6c7d', berry: '#683e57', blush: '#f2d9d6', ivory: '#fff8f2', gold: '#d6ad70' },
 };
