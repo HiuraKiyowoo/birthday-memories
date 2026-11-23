@@ -34,7 +34,7 @@ function PixelForest() {
 }
 
 function IntroDialog({ onYes, onNo }: { onYes: () => void; onNo: () => void }) {
-  return <motion.div className="dialog-scrim" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}><motion.div className="intro-dialog" initial={{ scale: .8, y: 18 }} animate={{ scale: 1, y: 0 }} exit={{ scale: .9 }}><div className="dialog-title"><span>♥ birthday.exe</span><button onClick={onNo} aria-label="Close">×</button></div><div className="dialog-content"><PixelCake/><p>Love, will you<br/>blow this?</p></div><div className="dialog-buttons"><button onClick={onYes}>Yes</button><button onClick={onNo}>No</button></div></motion.div></motion.div>;
+  return <motion.div className="dialog-scrim" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}><motion.div className="intro-dialog" initial={{ scale: .8, y: 18 }} animate={{ scale: 1, y: 0 }} exit={{ scale: .9 }}><div className="dialog-title"><span>♥ birthday.exe</span><button onClick={onNo} aria-label="Close">×</button></div><div className="dialog-content"><PixelCake/><p>Do you want<br/>to open this?</p></div><div className="dialog-buttons"><button onClick={onYes}>yes</button><button onClick={onNo}>no</button></div></motion.div></motion.div>;
 }
 
 export default function App() {
