@@ -7,9 +7,9 @@ export const birthday = {
   letter: 'Haiii nopayy!!\n\nHappy birthday yaa. Selamat bertambah usia semoga kedepannya hal baik selalu datang ke kamu semoga apa yang kamu perjuangin bisa tercapai. Selalu di berikan kesehatan, kebahagian serta di kelilingi orang-orang baik yang tulus dan sayang sama kamu.\n\nWhis you all the best,\nAlways stay happy and keep smilling!!',
   closing: 'Love',
   photos: [
-    { src: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85', caption: 'Golden hour, our favorite kind of magic.', date: 'A little while ago', rotate: '-4deg' },
-    { src: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=85', caption: 'The kind of laughter we never want to forget.', date: 'One perfect afternoon', rotate: '3deg' },
-    { src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=85', caption: 'You, being wonderfully and completely you.', date: 'Always a favorite', rotate: '-2deg' },
+    { src: '/assets/nopayy-memory-1.jpg', caption: 'A favorite little memory.', date: 'Always remembered', rotate: '-4deg' },
+    { src: '/assets/nopayy-memory-2.jpg', caption: 'One of our happy moments.', date: 'A day to keep', rotate: '3deg' },
+    { src: '/assets/nopayy-memory-3.jpg', caption: 'Something worth remembering.', date: 'A little while ago', rotate: '-2deg' },
     { src: '/assets/friends-celebrating.jpg', caption: 'Joy, laughter, and a little confetti.', date: 'A night to remember', rotate: '4deg' },
   ],
   timeline: [
@@ -17,11 +17,7 @@ export const birthday = {
     { date: 'The days in between', title: 'Our kind of ordinary', body: 'Coffee, long talks, happy accidents—and a hundred little reasons to smile.', icon: '♡' },
     { date: 'Today', title: 'A whole new chapter', body: 'More adventures, more wishes, and so many memories still waiting for us.', icon: '✧' },
   ],
-  musicSrc: '',
-  songTitle: 'My Wish',
-  songArtist: 'Rascal Flatts',
-  songArtwork: '/assets/my-wish-poster.jpg',
   finalArtwork: '/assets/nopayy-birthday-sticker-final.png',
-  spotifyTrackUrl: '',
+  spotifyPlaylistUrl: 'https://open.spotify.com/playlist/6b4vOjVdGV7N1yDU9fnXn1?si=l37jEnuTSvGKac1KKGhYsQ&utm_source=copy-link',
   theme: { rose: '#bd6c7d', berry: '#683e57', blush: '#f2d9d6', ivory: '#fff8f2', gold: '#d6ad70' },
 };
