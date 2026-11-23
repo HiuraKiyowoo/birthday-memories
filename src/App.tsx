@@ -1,4 +1,4 @@
-import { useRef, useState, type CSSProperties } from 'react';
+import { useMemo, useRef, useState, type CSSProperties } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Camera, HelpCircle, Mail, Music2, RotateCcw, X } from 'lucide-react';
 import { birthday } from './config/birthday';
@@ -13,6 +13,14 @@ const floatingNotes = [
 ];
 const spotifyPlaylistId = birthday.spotifyPlaylistUrl.match(/spotify\.com\/(?:embed\/)?playlist\/([A-Za-z0-9]+)/)?.[1] ?? '';
 const spotifyPlaylistEmbedUrl = spotifyPlaylistId ? `https://open.spotify.com/embed/playlist/${spotifyPlaylistId}?utm_source=generator&theme=0` : '';
+
+function PixelEnvelope() {
+  return <svg className="pixel-envelope-art" viewBox="0 0 32 24" role="presentation" shapeRendering="crispEdges"><rect x="2" y="3" width="28" height="19" fill="#fff3dc" stroke="#58413c" strokeWidth="3"/><path d="M4 6 16 15 28 6" fill="none" stroke="#a65a70" strokeWidth="3"/><path d="M4 19 12 12M28 19l-8-7" fill="none" stroke="#a65a70" strokeWidth="2"/></svg>;
+}
+
+function PixelSprout({ color }: { color: string }) {
+  return <svg className="pixel-sprout-sprite" viewBox="0 0 32 32" role="presentation" shapeRendering="crispEdges"><rect x="14" y="15" width="4" height="16" fill="#587349"/><rect x="7" y="9" width="8" height="5" fill={color}/><rect x="4" y="12" width="6" height="4" fill={color}/><rect x="17" y="5" width="8" height="5" fill={color}/><rect x="22" y="9" width="6" height="4" fill={color}/><rect x="11" y="20" width="4" height="3" fill="#789457"/><rect x="18" y="25" width="4" height="3" fill="#789457"/></svg>;
+}
 
 function PixelTree({broadleaf=false}:{broadleaf?:boolean}) {
   return <svg className={`pixel-tree-sprite ${broadleaf?'broadleaf':''}`} viewBox="0 0 32 40" role="presentation" shapeRendering="crispEdges">
@@ -51,6 +59,17 @@ export default function App() {
   const [greetingPulse, setGreetingPulse] = useState(false);
   const [surpriseActive, setSurpriseActive] = useState(false);
   const [openNote, setOpenNote] = useState<number | null>(null);
+  const hangingNotes = useMemo(() => {
+    const count = page === 5 ? 4 : 2;
+    return Array.from({ length: count }, (_, i) => ({
+      index: i,
+      left: Math.min(88, Math.max(5, (i + .5) * (100 / count) + (Math.random() - .5) * (count === 4 ? 13 : 17))),
+      cord: 8 + Math.random() * 8,
+      duration: 2.8 + Math.random() * 1.8,
+      delay: i * .11 + Math.random() * .14,
+      angle: 3.5 + Math.random() * 3,
+    }));
+  }, [page]);
   const lastWheel = useRef(0);
   const greetingTimer = useRef<number | null>(null);
   const surpriseTimer = useRef<number | null>(null);
@@ -94,8 +113,8 @@ export default function App() {
       {page===3&&<section className="letter-page"><div className="letter-window"><div className="letter-toolbar"><span>✉ A LETTER FOR YOU</span><span>♡</span></div><div className="letter-paper"><div className="letter-stamp">FOR<br/>YOU</div><p className="letter-copy">{birthday.letter}</p><div className="letter-sign"><span>{birthday.closing}</span><span className="letter-hug" role="img" aria-label="pelukan">🤗</span></div></div></div><div className="swipe-hint"><span>↓</span> SWIPE DOWN <span>↓</span></div></section>}
       {page===4&&<section className="gallery-page"><div className="gallery-title"><b>photo</b></div><div className="gallery-grid">{birthday.photos.map((p,i)=><button data-no-swipe className={`gallery-photo gallery-photo-${i}`} key={p.caption} onClick={()=>setPhoto(i)}><img src={p.src} loading="lazy" alt={p.caption}/></button>)}</div><div className="gallery-footer">A FEW OF MY FAVORITE THINGS <span>✿</span></div><div className="swipe-hint"><span>↓</span> SWIPE DOWN <span>↓</span></div></section>}
       {page===5&&<section className="surprise-page"><div className="surprise-floaters" aria-hidden="true"><span className="surprise-word word-one">happy birthday</span><span className="surprise-word word-two">all the best</span><span className="surprise-word word-three">stay happy</span><span className="surprise-word word-four">lots of love</span><i className="surprise-particle particle-one">✦</i><i className="surprise-particle particle-two">♡</i><i className="surprise-particle particle-three">✧</i><i className="surprise-particle particle-four">✦</i><i className="surprise-particle particle-five">·</i><i className="surprise-particle particle-six">·</i></div><div className="birthday-sticker-wrap"><img className="birthday-sticker" src={birthday.finalArtwork} alt="Foto Nopayy untuk ucapan ulang tahun"/></div><button className="surprise-trigger" onClick={triggerSurprise} data-no-swipe>MAKE A WISH <span>✦</span></button>{surpriseActive&&<div className="surprise-burst" aria-live="polite"><p>YOU DESERVE ALL THE HAPPINESS!</p><i className="burst-piece burst-one">✦</i><i className="burst-piece burst-two">✿</i><i className="burst-piece burst-three">♥</i><i className="burst-piece burst-four">✦</i><i className="burst-piece burst-five">✧</i><i className="burst-piece burst-six">✿</i><i className="burst-piece burst-seven">♥</i><i className="burst-piece burst-eight">✦</i><i className="burst-piece burst-nine">✧</i><i className="burst-piece burst-ten">✿</i></div>}<button className="replay-link" onClick={()=>{setPage(0);setShowIntro(true)}} data-no-swipe><RotateCcw size={13}/> REPLAY</button></section>}
-      <div className="hanging-notes" aria-label="Surat kecil di tiap halaman">{(page===5?[0,1,2,3]:[0,1]).map((index)=><button key={index} className={`hanging-note note-${index}`} onClick={()=>setOpenNote(index)} aria-label={`Buka surat kecil ${index+1}`} data-no-swipe><span className="note-cord"/><span className="note-envelope"><Mail size={18}/></span></button>)}</div>
-      <div className="page-sprouts" aria-hidden="true"><i>🌱</i><i>✿</i><i>🌿</i><i>✦</i><i>🌱</i></div>
+      <div className="hanging-notes" aria-label="Surat kecil di tiap halaman">{hangingNotes.map(({index,left,cord,duration,delay,angle})=><button key={index} className="hanging-note" style={{left:`${left}%`,'--cord-length':`${cord}vh`,'--sway-duration':`${duration}s`,'--drop-delay':`${delay}s`,'--sway-angle':`${angle}deg`} as CSSProperties} onClick={()=>setOpenNote(index)} aria-label={`Buka surat kecil ${index+1}`} data-no-swipe><span className="note-cord"/><span className="note-envelope"><PixelEnvelope/></span></button>)}</div>
+      <div className="page-sprouts" aria-hidden="true">{['#88a85a','#d4a15e','#76a884','#c87895','#93a95a'].map((color,i)=><i key={i}><PixelSprout color={color}/></i>)}</div>
     </motion.section></AnimatePresence>
     <div className="page-progress" aria-label={`Page ${page+1} of 6`}>{pages.map((_,i)=><i key={i} className={i===page?'active':''}/>)}</div>
     <AnimatePresence>{photo!==null&&<motion.div className="photo-modal" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} onClick={()=>setPhoto(null)}><div className="photo-modal-card" onClick={e=>e.stopPropagation()}><button onClick={()=>setPhoto(null)} aria-label="Close" data-no-swipe><X size={18}/></button><img src={birthday.photos[photo].src} alt={birthday.photos[photo].caption}/><p>{birthday.photos[photo].caption}</p></div></motion.div>}</AnimatePresence>
