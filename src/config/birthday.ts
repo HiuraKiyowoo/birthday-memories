@@ -4,8 +4,8 @@ export const birthday = {
   sender: 'With all my love',
   birthdayDate: 'Your special day',
   greeting: 'May this next trip around the sun bring you all the little things that make your heart feel at home.',
-  letter: 'I hope you always remember how much light you bring into the lives around you. Thank you for every laugh, every late-night conversation, and every ordinary day you made feel special. Today, I hope the world gives a little of that magic back to you. Keep dreaming boldly, stay exactly as lovely as you are, and know that you are celebrated more than words can say.',
-  closing: 'Here’s to your next beautiful chapter.',
+  letter: 'Haiii nopayy!!\n\nHappy birthday yaa. Selamat bertambah usia semoga kedepannya hal baik selalu datang ke kamu semoga apa yang kamu perjuangin bisa tercapai. Selalu di berikan kesehatan, kebahagian serta di kelilingi orang-orang baik yang tulus dan sayang sama kamu.\n\nWhis you all the best,\nAlways stay happy and keep smilling!!',
+  closing: 'Love',
   photos: [
     { src: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85', caption: 'Golden hour, our favorite kind of magic.', date: 'A little while ago', rotate: '-4deg' },
     { src: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=85', caption: 'The kind of laughter we never want to forget.', date: 'One perfect afternoon', rotate: '3deg' },
