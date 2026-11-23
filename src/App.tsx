@@ -5,6 +5,12 @@ import { birthday } from './config/birthday';
 
 const pages = ['Birthday', 'Menu', 'Music', 'Letter', 'Memories', 'Surprise'];
 const icons = [Music2, Camera, Mail, HelpCircle];
+const floatingNotes = [
+  'Semoga hari ini penuh tawa, hal-hal manis, dan kejutan kecil buat kamu.',
+  'Semoga semua yang kamu perjuangkan pelan-pelan jadi nyata. Kamu pasti bisa.',
+  'Jangan lupa senyum yaa—kamu pantas mendapat banyak hal baik.',
+  'Selalu ada yang sayang dan dukung kamu. Happy birthday, Nopayy!',
+];
 const spotifyPlaylistId = birthday.spotifyPlaylistUrl.match(/spotify\.com\/(?:embed\/)?playlist\/([A-Za-z0-9]+)/)?.[1] ?? '';
 const spotifyPlaylistEmbedUrl = spotifyPlaylistId ? `https://open.spotify.com/embed/playlist/${spotifyPlaylistId}?utm_source=generator&theme=0` : '';
 
@@ -44,6 +50,7 @@ export default function App() {
   const [touchStart, setTouchStart] = useState<{x:number;y:number}|null>(null);
   const [greetingPulse, setGreetingPulse] = useState(false);
   const [surpriseActive, setSurpriseActive] = useState(false);
+  const [openNote, setOpenNote] = useState<number | null>(null);
   const lastWheel = useRef(0);
   const greetingTimer = useRef<number | null>(null);
   const surpriseTimer = useRef<number | null>(null);
@@ -87,9 +94,12 @@ export default function App() {
       {page===3&&<section className="letter-page"><div className="letter-window"><div className="letter-toolbar"><span>✉ A LETTER FOR YOU</span><span>♡</span></div><div className="letter-paper"><div className="letter-stamp">FOR<br/>YOU</div><p className="letter-copy">{birthday.letter}</p><div className="letter-sign"><span>{birthday.closing}</span><span className="letter-hug" role="img" aria-label="pelukan">🤗</span></div></div></div><div className="swipe-hint"><span>↓</span> SWIPE DOWN <span>↓</span></div></section>}
       {page===4&&<section className="gallery-page"><div className="gallery-title"><b>photo</b></div><div className="gallery-grid">{birthday.photos.map((p,i)=><button data-no-swipe className={`gallery-photo gallery-photo-${i}`} key={p.caption} onClick={()=>setPhoto(i)}><img src={p.src} loading="lazy" alt={p.caption}/></button>)}</div><div className="gallery-footer">A FEW OF MY FAVORITE THINGS <span>✿</span></div><div className="swipe-hint"><span>↓</span> SWIPE DOWN <span>↓</span></div></section>}
       {page===5&&<section className="surprise-page"><div className="surprise-floaters" aria-hidden="true"><span className="surprise-word word-one">happy birthday</span><span className="surprise-word word-two">all the best</span><span className="surprise-word word-three">stay happy</span><span className="surprise-word word-four">lots of love</span><i className="surprise-particle particle-one">✦</i><i className="surprise-particle particle-two">♡</i><i className="surprise-particle particle-three">✧</i><i className="surprise-particle particle-four">✦</i><i className="surprise-particle particle-five">·</i><i className="surprise-particle particle-six">·</i></div><div className="birthday-sticker-wrap"><img className="birthday-sticker" src={birthday.finalArtwork} alt="Foto Nopayy untuk ucapan ulang tahun"/></div><button className="surprise-trigger" onClick={triggerSurprise} data-no-swipe>MAKE A WISH <span>✦</span></button>{surpriseActive&&<div className="surprise-burst" aria-live="polite"><p>YOU DESERVE ALL THE HAPPINESS!</p><i className="burst-piece burst-one">✦</i><i className="burst-piece burst-two">✿</i><i className="burst-piece burst-three">♥</i><i className="burst-piece burst-four">✦</i><i className="burst-piece burst-five">✧</i><i className="burst-piece burst-six">✿</i><i className="burst-piece burst-seven">♥</i><i className="burst-piece burst-eight">✦</i><i className="burst-piece burst-nine">✧</i><i className="burst-piece burst-ten">✿</i></div>}<button className="replay-link" onClick={()=>{setPage(0);setShowIntro(true)}} data-no-swipe><RotateCcw size={13}/> REPLAY</button></section>}
+      <div className="hanging-notes" aria-label="Surat kecil di tiap halaman">{(page===5?[0,1,2,3]:[0,1]).map((index)=><button key={index} className={`hanging-note note-${index}`} onClick={()=>setOpenNote(index)} aria-label={`Buka surat kecil ${index+1}`} data-no-swipe><span className="note-cord"/><span className="note-envelope"><Mail size={18}/></span></button>)}</div>
+      <div className="page-sprouts" aria-hidden="true"><i>🌱</i><i>✿</i><i>🌿</i><i>✦</i><i>🌱</i></div>
     </motion.section></AnimatePresence>
     <div className="page-progress" aria-label={`Page ${page+1} of 6`}>{pages.map((_,i)=><i key={i} className={i===page?'active':''}/>)}</div>
     <AnimatePresence>{photo!==null&&<motion.div className="photo-modal" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} onClick={()=>setPhoto(null)}><div className="photo-modal-card" onClick={e=>e.stopPropagation()}><button onClick={()=>setPhoto(null)} aria-label="Close" data-no-swipe><X size={18}/></button><img src={birthday.photos[photo].src} alt={birthday.photos[photo].caption}/><p>{birthday.photos[photo].caption}</p></div></motion.div>}</AnimatePresence>
+    <AnimatePresence>{openNote!==null&&<motion.div className="note-modal" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} onClick={()=>setOpenNote(null)} data-no-swipe><motion.div className="note-modal-card" initial={{y:24,scale:.88}} animate={{y:0,scale:1}} exit={{y:12,scale:.94}} onClick={e=>e.stopPropagation()}><div className="note-modal-top"><span><Mail size={16}/> A LITTLE NOTE</span><button onClick={()=>setOpenNote(null)} aria-label="Tutup surat"><X size={16}/></button></div><p>{floatingNotes[openNote]}</p><span className="note-modal-sign">— with love ♡</span></motion.div></motion.div>}</AnimatePresence>
     </>}
   </main>;
 }
